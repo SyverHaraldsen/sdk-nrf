@@ -275,6 +275,10 @@ manifest:
       revision: d5fad6bd094899101a4e5fd53af7298160ced6ab
       groups:
         - benchmark
+    - name: redteamobile-nusim
+      path: modules/lib/redteamobile-nusim
+      url: file:///Users/syver/Documents/ncs_workspaces/ncs_fork_main/modules/lib/redteamobile-nusim
+      revision: master
 
   # West-related configuration for the nrf repository.
   self:
