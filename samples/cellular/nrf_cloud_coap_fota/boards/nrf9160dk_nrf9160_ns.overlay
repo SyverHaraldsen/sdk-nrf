@@ -6,7 +6,7 @@
 
 / {
 	chosen {
-		nordic,pm-ext-flash = &gd25wb256;
+		nordic,pm-ext-flash = &mx25r64;
 		nordic,fmfu-storage = &fmfu_storage_partition;
 	};
 };
@@ -14,7 +14,7 @@
 #include <samples/cellular/nrf91_immutable_bootloader_partitions.dtsi>
 
 /* External flash device is disabled by default */
-&gd25wb256 {
+&mx25r64 {
 	status = "okay";
 
 	partitions {
