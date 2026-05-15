@@ -7,11 +7,7 @@
 / {
 	chosen {
 		zephyr,code-partition = &boot_partition;
-		nordic,pm-ext-flash = &gd25wb256;
 	};
 };
 
-/* External flash device is disabled by default */
-&gd25wb256 {
-	status = "okay";
-};
+#include "../../../boards/nrf9151dk_nrf9151_ns.overlay"

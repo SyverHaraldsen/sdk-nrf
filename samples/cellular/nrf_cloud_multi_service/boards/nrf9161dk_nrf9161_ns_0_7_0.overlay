@@ -9,6 +9,7 @@
 / {
 	chosen {
 		nordic,pm-ext-flash = &gd25lb256;
+		nordic,pgps-partition = &pgps_partition;
 	};
 
 	aliases {
@@ -16,6 +17,21 @@
 	};
 };
 
+#include <samples/cellular/nrf91_bootloader_partitions.dtsi>
+
 &gd25lb256 {
 	status = "okay";
+
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		pgps_partition: partition@0 {
+			label = "pgps";
+			reg = <0x00000000 0x400000>;
+		};
+	};
 };
+
+#include <samples/cellular/nrf91_sram_partitions.dtsi>

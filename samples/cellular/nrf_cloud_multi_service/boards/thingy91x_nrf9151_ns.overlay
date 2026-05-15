@@ -14,6 +14,7 @@
 
 	chosen {
 		zephyr,wifi = &nordic_wlan0;
+		nordic,pgps-partition = &external_flash_partition;
 	};
 };
 

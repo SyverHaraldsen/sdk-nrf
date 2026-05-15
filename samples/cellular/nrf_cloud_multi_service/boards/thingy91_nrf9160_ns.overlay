@@ -13,6 +13,22 @@
 		accelerometer = &adxl362;
 		impact-sensor = &adxl372;
 	};
+
+	chosen {
+		nordic,pgps-partition = &pgps_partition;
+	};
+};
+
+/delete-node/ &scratch_partition;
+
+&flash0 {
+	partitions {
+		pgps_partition: partition@de000 {
+			compatible = "zephyr,mapped-partition";
+			label = "pgps";
+			reg = <0x00000000 0x14000>;
+		};
+	};
 };
 
 &i2c2 {

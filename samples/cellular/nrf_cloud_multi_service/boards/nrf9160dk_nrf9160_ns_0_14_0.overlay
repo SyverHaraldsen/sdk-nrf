@@ -7,10 +7,26 @@
 / {
 	chosen {
 		nordic,pm-ext-flash = &mx25r64;
+		nordic,pgps-partition = &pgps_partition;
 	};
 };
+
+#include <samples/cellular/nrf91_bootloader_partitions.dtsi>
 
 /* External flash device is disabled by default */
 &mx25r64 {
 	status = "okay";
+
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		pgps_partition: partition@0 {
+			label = "pgps";
+			reg = <0x00000000 0x400000>;
+		};
+	};
 };
+
+#include <samples/cellular/nrf91_sram_partitions.dtsi>
