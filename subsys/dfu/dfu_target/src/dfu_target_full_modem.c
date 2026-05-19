@@ -61,7 +61,7 @@ int dfu_target_full_modem_cfg(const struct dfu_target_full_modem_params *params)
 
 #else /* !CONFIG_PARTITION_MANAGER_ENABLED */
 
-#if DT_HAS_CHOSEN(nordic, fmfu_storage)
+#if DT_HAS_CHOSEN(nordic_fmfu_storage)
 #define FMFU_PARTITION DT_CHOSEN(nordic, fmfu_storage_partition)
 #else
 #define FMFU_PARTITION DT_NODELABEL(fmfu_storage_partition)
