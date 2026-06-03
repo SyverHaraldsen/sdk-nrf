@@ -1,0 +1,39 @@
+# Copyright (c) 2026 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+description: GPIO lines for controlling the modem on nRF93M1 DK board
+
+compatible: "nordic,nrf93m1dk-modem-control"
+
+include: base.yaml
+
+properties:
+  status:
+    required: true
+
+  dcdc-en-gpios:
+    type: phandle-array
+    description: |
+      GPIO for enabling the DC/DC regulator that powers the modem.
+
+  vcom1-ctl-gpios:
+    type: phandle-array
+    description: |
+      GPIO for controlling the UART bypass switch.
+
+  modem-reset-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      nRF93M1 modem reset GPIO.
+
+  modem-powerkey-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      GPIO for controlling the modem power key.
+
+  modem-usb-boot-gpios:
+    type: phandle-array
+    description: |
+      GPIO for controlling the modem USB boot mode.

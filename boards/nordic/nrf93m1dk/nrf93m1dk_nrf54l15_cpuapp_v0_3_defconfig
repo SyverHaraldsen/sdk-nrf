@@ -1,0 +1,3 @@
+# DK v0.3 does not have an external 32kHz crystal
+# Use the internal RC oscillator instead
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y

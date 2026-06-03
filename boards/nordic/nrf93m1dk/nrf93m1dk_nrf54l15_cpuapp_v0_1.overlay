@@ -1,0 +1,7 @@
+/*
+ * Copyright (c) 2025 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+#include "nrf93m1dk_nrf54l15_common_v0_1.dtsi"

@@ -1,0 +1,56 @@
+board:
+  name: nrf93m1dk
+  full_name: nRF93M1 DK
+  vendor: nordic
+  revision:
+    format: custom
+    default: v0.3
+    exact: true
+    revisions:
+    - name: v0.1
+    - name: v0.2
+    - name: v0.3
+  socs:
+    - name: nrf54l15
+      variants:
+        - name: xip
+          cpucluster: cpuflpr
+        - name: ns
+          cpucluster: cpuapp
+runners:
+  run_once:
+    '--recover':
+      - runners:
+          - nrfjprog
+          - nrfutil
+        run: first
+        groups:
+          - boards:
+              - nrf93m1dk/nrf54l15/cpuapp
+              - nrf93m1dk/nrf54l15/cpuapp/ns
+              - nrf93m1dk/nrf54l15/cpuflpr
+              - nrf93m1dk/nrf54l15/cpuflpr/xip
+    '--erase':
+      - runners:
+          - nrfjprog
+          - jlink
+          - nrfutil
+        run: first
+        groups:
+          - boards:
+              - nrf93m1dk/nrf54l15/cpuapp
+              - nrf93m1dk/nrf54l15/cpuapp/ns
+              - nrf93m1dk/nrf54l15/cpuflpr
+              - nrf93m1dk/nrf54l15/cpuflpr/xip
+    '--reset':
+      - runners:
+          - nrfjprog
+          - jlink
+          - nrfutil
+        run: last
+        groups:
+          - boards:
+              - nrf93m1dk/nrf54l15/cpuapp
+              - nrf93m1dk/nrf54l15/cpuapp/ns
+              - nrf93m1dk/nrf54l15/cpuflpr
+              - nrf93m1dk/nrf54l15/cpuflpr/xip
